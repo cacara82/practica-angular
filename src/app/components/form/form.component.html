@@ -1,0 +1,106 @@
+<form [formGroup]="formGroup" (ngSubmit)="enviaFormulari()" [matchFields]="['email', 'repeatEmail']" class="border">
+    <h2>Formulari d'inscripció</h2>
+    <div>
+        <label>Introdueix el teu username: </label>
+        <input type="text" formControlName="nom">
+
+        @if (formGroup.get("nom")?.invalid && formGroup.get("nom")?.dirty) {
+            @if (formGroup.get("nom")?.hasError("required")) {
+                <p class="error">Aquest camp és obligatori.</p>
+            }
+        }
+        
+    </div>
+    <div>
+        <label>Introdueix el teu e-mail: </label>
+        <input type="text" formControlName="email">
+
+        @if (formGroup.get("email")?.invalid && formGroup.get("email")?.dirty) {
+            @if (formGroup.get("email")?.hasError("required")) {
+                <p class="error">Aquest camp és obligatori.</p>
+            }
+            @if (formGroup.get("email")?.hasError("email")) {
+                <p class="error">Si us plau, introdueix un correu vàlid.</p>
+            }
+        }
+
+    </div>
+    <div>
+        <label>Repeteix el teu e-mail: </label>
+        <input type="text" formControlName="repeatEmail">
+
+        @if (formGroup.get("repeatEmail")?.invalid && formGroup.get("repeatEmail")?.dirty) {
+            @if (formGroup.get("repeatEmail")?.hasError("required")) {
+                <p class="error">Aquest camp és obligatori.</p>
+            }
+            @if (formGroup.get("repeatEmail")?.hasError("email")) {
+                <p class="error">Si us plau, introdueix un correu vàlid.</p>
+            }
+        }
+
+        <!-- @if (formGroup.get('email')?.valid && formGroup.get('repeatEmail')?.valid && formGroup.hasError('fieldsMismatch')) {
+            <p class="error">Els dos correus han de coincidir!</p>
+        } -->
+        
+
+    </div>
+    <div>
+        <label>Introdueix el teu telèfon (espanyol): </label>
+        <input type="text" formControlName="telefon">
+
+        @if (formGroup.get("telefon")?.invalid && formGroup.get("telefon")?.dirty) {
+            @if (formGroup.get("telefon")?.hasError("required")) {
+                <p class="error">Aquest camp és obligatori.</p>
+            }
+            @if (formGroup.get("telefon")?.hasError("pattern")) {
+                <p class="error">El telèfon només pot tenir dígits i ha de començar per +34.</p>
+            }
+        }
+
+    </div>
+    <div>
+        <label>Selecciona la teva província:</label>
+        <select formControlName="provincia">
+            <option value="barcelona">Barcelona</option>
+            <option value="tarragona">Tarragona</option>
+            <option value="lleida">Lleida</option>
+            <option value="girona">Girona</option>
+        </select>
+
+        @if (formGroup.get("provincia")?.invalid && formGroup.get("provincia")?.touched) {
+            @if (formGroup.get("provincia")?.hasError("required")) {
+                <p class="error">Aquest camp és obligatori.</p>
+            }
+        }
+        
+    </div>
+    <div>
+        <label>Preferència de contacte: </label>
+        <input type="radio" formControlName="contacte" value="correu"/> Correu
+        <input type="radio" formControlName="contacte" value="telefon"/> Telèfon
+
+        @if (formGroup.get("contacte")?.invalid && formGroup.get("contacte")?.touched) {
+            @if (formGroup.get("contacte")?.hasError("required")) {
+                <p class="error">Aquest camp és obligatori.</p>
+            }
+        }
+
+    </div>
+    <div>
+        <input type="checkbox" formControlName="privacitat">
+        <label> Accepto les polítiques de privacitat</label>
+
+        @if (formGroup.get("privacitat")?.invalid && formGroup.get("privacitat")?.touched) {
+            @if (formGroup.get("privacitat")?.hasError("requiredTrue")) {
+                <p class="error">Per continuar has d'acceptar les polítiques.</p>
+            }
+        }
+
+    </div>
+    <div>
+        <button [disabled]="formGroup.invalid">Confirma i envia</button>
+    </div>
+</form>
+<div id="resultsDisplayer">
+
+</div>

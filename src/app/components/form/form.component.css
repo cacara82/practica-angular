@@ -1,0 +1,22 @@
+.border {
+    margin: 20px;
+    padding: 25px;
+    border: solid 1px grey;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+    gap: 5px;
+}
+
+div {
+    padding: 5px;
+}
+
+.results {
+    margin: 20px;
+    padding: 25px;
+    border: solid 1px green;
+    background-color: greenyellow;
+}
