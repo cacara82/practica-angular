@@ -1,0 +1,23 @@
+<form class="border" [formGroup]="formGroup" (ngSubmit)="envia()">
+    <h2>Poké-API - HttpClient</h2>
+    <div>
+        <label>Introdueix nombre de la pokédex: </label>
+        <input type="number" formControlName="pokedex"/>
+
+        @if (formGroup.get("pokedex")?.invalid && formGroup.get("pokedex")?.dirty) {
+            @if (formGroup.get("pokedex")?.hasError("required")) {
+                <p class="error">Aquest camp és obligatori.</p>
+            }
+            @if (formGroup.get("pokedex")?.hasError("min") || formGroup.get("pokedex")?.hasError("max")) {
+                <p class="error">El nombre ha d'estar entre 1 i 1025.</p>
+            }
+        }
+
+    </div>
+    <div>
+        <button type="submit" [disabled]="formGroup.invalid">Envia!</button>
+    </div>
+</form>
+<div id="results">
+
+</div>
