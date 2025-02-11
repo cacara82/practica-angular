@@ -1,0 +1,29 @@
+<form class="border" [formGroup]="formGroupCompartit" (ngSubmit)="submit()">
+    <h2>Inputs Compartits i Services</h2>
+    <div>
+        <label>Introdueix un missatge: </label>
+        <input type="text" formControlName="input1"/>
+        &nbsp;
+        <input type="text" value="{{formGroupCompartit.value.input1}}" disabled/>
+    </div>
+    <div>
+        <label>Introdueix dos números: </label>
+        <input type="number" formControlName="number1"/>
+        &nbsp;
+        <input type="number" formControlName="number2"/>
+    </div>
+    <div>
+        <button type="submit" (click)="actionType = '+'" [disabled]="formGroupCompartit.invalid">+</button>
+        &nbsp;
+        <button type="submit" (click)="actionType = '-'" [disabled]="formGroupCompartit.invalid">-</button>
+        &nbsp;
+        <button type="submit" (click)="actionType = '*'" [disabled]="formGroupCompartit.invalid">*</button>
+        &nbsp;
+        <button type="submit" (click)="actionType = '/'" [disabled]="formGroupCompartit.invalid">/</button>
+    </div>
+    <div>
+        <label>Resultat: </label>
+        <input type="text" value="{{formGroupCompartit.value.res}}" disabled/>
+    </div>
+</form>
+

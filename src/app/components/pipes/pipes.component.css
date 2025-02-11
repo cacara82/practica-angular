@@ -1,0 +1,9 @@
+.border {
+    margin: 20px;
+    padding: 25px;
+    border: solid 1px grey;
+}
+
+div {
+    padding: 5px;
+}
