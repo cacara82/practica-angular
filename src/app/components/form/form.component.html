@@ -1,4 +1,4 @@
-<form [formGroup]="formGroup" (ngSubmit)="enviaFormulari()" [matchFields]="['email', 'repeatEmail']" class="border">
+<form [formGroup]="formGroup" (ngSubmit)="enviaFormulari()" class="border">
     <h2>Formulari d'inscripció</h2>
     <div>
         <label>Introdueix el teu username: </label>
@@ -26,21 +26,17 @@
 
     </div>
     <div>
-        <label>Repeteix el teu e-mail: </label>
-        <input type="text" formControlName="repeatEmail">
+        <label>Introdueix una contrasenya: </label>
+        <input type="password" formControlName="contrasenya" appPasswordValidation>
 
-        @if (formGroup.get("repeatEmail")?.invalid && formGroup.get("repeatEmail")?.dirty) {
-            @if (formGroup.get("repeatEmail")?.hasError("required")) {
+        @if (formGroup.get("contrasenya")?.invalid && formGroup.get("contrasenya")?.dirty) {
+            @if (formGroup.get("contrasenya")?.hasError("required")) {
                 <p class="error">Aquest camp és obligatori.</p>
             }
-            @if (formGroup.get("repeatEmail")?.hasError("email")) {
-                <p class="error">Si us plau, introdueix un correu vàlid.</p>
+            @if (formGroup.get("contrasenya")?.hasError("passwordInvalid")) {
+                <p class="error">La contrasenya ha de contenir almenys una majúscula, una minúscula, un número i un caràcter especial.</p>
             }
         }
-
-        <!-- @if (formGroup.get('email')?.valid && formGroup.get('repeatEmail')?.valid && formGroup.hasError('fieldsMismatch')) {
-            <p class="error">Els dos correus han de coincidir!</p>
-        } -->
         
 
     </div>
