@@ -18,6 +18,36 @@
         <button type="submit" [disabled]="formGroup.invalid">Envia!</button>
     </div>
 </form>
-<div id="results">
 
-</div>
+@if (pkmnData != null) {
+    <div class="results">
+        <h4>Pokémon Nº {{num}}: {{pkmnData.name.toUpperCase()}}</h4>
+        <div>
+          <img [src]="pkmnData.sprites.front_default" width="150">
+          <img [src]="pkmnData.sprites.front_shiny" width="150">
+          <img [src]="pkmnData.sprites.back_default" width="150">
+          <img [src]="pkmnData.sprites.back_shiny" width="150">
+        </div>
+        <div>
+          <audio controls>
+            <source [src]="pkmnData.cries.latest" type="audio/ogg">
+          </audio>
+        </div>
+        <div>
+        <br>
+          <button (click)="marcaPreferit()">Marca com a preferit</button>
+        </div>
+
+        @if (marcatPreferit) {
+            <div>
+                <p class="success">Has marcat com a preferit el pokémon.</p>
+            </div>
+        }
+
+    </div>
+}
+
+@if (favData != null) {
+    
+}
+

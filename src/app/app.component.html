@@ -6,6 +6,8 @@
     <button routerLink="/sharedFields">Shared Fields</button>
     <button routerLink="/pipes">Pipes</button>
     <button routerLink="/api">API</button>
+    <button routerLink="/guards1">Guards 1 - Activate</button>
+    <button routerLink="/guards2" [disabled]="!isLogged()">Guards 2</button>
   </nav>
 </div>
 

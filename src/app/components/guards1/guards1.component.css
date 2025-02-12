@@ -13,14 +13,3 @@
 div {
     padding: 5px;
 }
-
-.results {
-    margin: 20px;
-    padding: 25px;
-    border: solid 1px green;
-}
-
-.success {
-    font-weight: bolder;
-    color: green;
-}
