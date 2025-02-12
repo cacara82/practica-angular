@@ -48,6 +48,19 @@
 }
 
 @if (favData != null) {
-    
+    <div class="preferit">
+        <h4>ACTUAL PREFERIT -> Pokémon Nº {{favData.id}}: {{favData.name.toUpperCase()}}</h4>
+        <div>
+          <img [src]="favData.sprites.front_default" width="150">
+          <img [src]="favData.sprites.front_shiny" width="150">
+          <img [src]="favData.sprites.back_default" width="150">
+          <img [src]="favData.sprites.back_shiny" width="150">
+        </div>
+        <div>
+          <audio controls>
+            <source [src]="favData.cries.latest" type="audio/ogg">
+          </audio>
+        </div>
+    </div>
 }
 

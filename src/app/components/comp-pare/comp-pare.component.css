@@ -18,15 +18,5 @@ div {
     margin: 20px;
     padding: 25px;
     border: solid 1px green;
-}
-
-.success {
-    font-weight: bolder;
-    color: green;
-}
-
-.preferit {
-    margin: 20px;
-    padding: 25px;
-    border: solid 1px blue;
+    background-color: greenyellow;
 }

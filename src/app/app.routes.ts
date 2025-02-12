@@ -8,6 +8,7 @@ import { ApiComponent } from './components/api/api.component';
 import { Guards1Component } from './components/guards1/guards1.component';
 import { Guards2Component } from './components/guards2/guards2.component';
 import { AuthGuardService } from './services/auth-guard.service';
+import { CompPareComponent } from './components/comp-pare/comp-pare.component';
 
 export const routes: Routes = [
     {path: "", component: HomeComponent, title: "Home"},
@@ -16,5 +17,6 @@ export const routes: Routes = [
     {path: "pipes", component: PipesComponent, title: "Pipes"},
     {path: "api", component: ApiComponent, title: "PokéAPI - HttpClient"},
     {path: "guards1", component: Guards1Component, title: "Guards 1 - Activate"},
-    {path: "guards2", component: Guards2Component, title: "Guards 2 - Access Granted", canActivate: [AuthGuardService], canDeactivate: [AuthGuardService]}
+    {path: "guards2", component: Guards2Component, title: "Guards 2 - Access Granted", canActivate: [AuthGuardService], canDeactivate: [AuthGuardService]},
+    {path: "pare", component: CompPareComponent, title: "Comunicació Pare-Fill"}
 ];

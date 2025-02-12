@@ -1,5 +1,8 @@
 <div class="border">
     <h2>Pipes</h2>
-    <p>pipes works!</p>
+    <p>{{ exampleText }}</p>
+    <p>"Uppercase": {{ exampleText | textTransform:"uppercase" }}</p>
+    <p>"Lowercase": {{ exampleText | textTransform:"lowercase" }}</p>
+    <p>"Capitalize": {{ exampleText | textTransform:"capitalize" }}</p>
 </div>
 
