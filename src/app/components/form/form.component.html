@@ -8,6 +8,9 @@
             @if (formGroup.get("nom")?.hasError("required")) {
                 <p class="error">Aquest camp és obligatori.</p>
             }
+            @if (formGroup.get("nom")?.hasError("tieneNumeros")) {
+                <p class="error">El nom no pot contenir números.</p>
+            }
         }
         
     </div>

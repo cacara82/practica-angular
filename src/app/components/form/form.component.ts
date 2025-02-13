@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { PasswordValidationDirective } from '../../directives/validations/password-validation.directive';
+import { CustomValidators } from '../../classes/custom-validator';
 
 @Component({
   selector: 'app-form',
@@ -11,7 +12,7 @@ import { PasswordValidationDirective } from '../../directives/validations/passwo
 export class FormComponent {
 
   formGroup = new FormGroup({
-    nom: new FormControl("", [Validators.required]),
+    nom: new FormControl("", [Validators.required, CustomValidators.nombreSinNumeros]),
     email: new FormControl("", [Validators.required, Validators.email]),
     contrasenya: new FormControl("", [Validators.required]),
     telefon: new FormControl("", [Validators.required, Validators.pattern("^\\+34[0-9]+$")]),

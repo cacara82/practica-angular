@@ -36,8 +36,9 @@ export class ApiComponent {
 
   // Métode per marcar com a preferit per a cookies
   marcaPreferit() {
-    this.cookieService.set("preferit", JSON.stringify(this.num));
+    this.cookieService.set("preferit", this.num.toString());
     this.marcatPreferit = true;
+    window.location.reload();
   }
 
   //Ng On init per cridar la api amb el preferit guardat a la cookie

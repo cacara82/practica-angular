@@ -1,2 +1,19 @@
-^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$ - EMAIL
+^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,6}$ - EMAIL
 ^\+34[0-9]+$ - TLF ESPAÑOL
+^[A-Za-zÁÉÍÓÚáéíóúñÑ\s]+$ - SOLO LETRAS
+^[A-Za-z0-9]+$ - SOLO LETRAS Y NÚMEROS
+^\d+$ - SOLO NUMS ENTEROS
+^\d+([.,]\d+)?$ - NUM DECIMAL
+^\d{5}$ - CÓDIGO POSTAL ESPAÑOL
+^[6789]\d{8}$ - RESTO DEL NUMERO DE TELEFONO
+^(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/\d{4}$ - FECHA DD/MM/YYYY
+^([01]\d|2[0-3]):[0-5]\d$ - HORA FORMATO 24H
+^\d{8}[A-Za-z]$ - DNI
+^(https?:\/\/)?([\w-]+\.)+[\w-]+(\/[\w-./?%&=]*)?$ - URL
+^(\d{1,3}\.){3}\d{1,3}$ - IPV4
+^((https?:\/\/)?([a-zA-Z0-9-]+\.)*)[a-zA-Z0-9-]+\.cat(\/.*)?$ - DOMINIO .CAT
+^\d*[02468]$ - PARES
+^\d*[13579]$ - IMPARES
+
+
+
